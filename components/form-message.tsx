@@ -1,7 +1,8 @@
 export type Message =
   | { success: string }
   | { error: string }
-  | { message: string };
+  | { message: string }
+  | { email: string };
 
 export function FormMessage({ message }: { message: Message }) {
   return (
@@ -18,6 +19,10 @@ export function FormMessage({ message }: { message: Message }) {
       )}
       {"message" in message && (
         <div className="text-foreground border-l-2 px-4">{message.message}</div>
+      )}
+      {"email" in message && (
+        // This is a hidden state that will be used to pass email information
+        <input type="hidden" name="email" value={message.email} />
       )}
     </div>
   );
