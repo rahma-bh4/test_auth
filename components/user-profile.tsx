@@ -212,7 +212,7 @@ export default function UserProfile() {
             <Button 
               onClick={updateProfile} 
               disabled={updating}
-              className="w-full gap-2"
+              className="w-full gap-2 bg-indigo-600 hover:bg-indigo-700"
             >
               {updating ? (
                 <>
